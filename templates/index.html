@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Office Expense</title>
+</head>
+<body>
+    <h1>Office Expense Tracker</h1>
+
+<table class="expenseTable">
+    <tr>
+        <th>Office Transactions</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th><a href="/new-transaction" style="text-decoration: none;background-color: rgb(215, 215, 215);padding: 2px;"> + Add Transaction</a></th>
+      </tr>
+  <tr>
+    <th>Date</th>
+    <th>Description</th>
+    <th>Credit</th>
+    <th>Debit</th>
+    <th>Running Balance</th>
+  </tr>
+  {% for expense in expenses_data %}
+  <tr>
+    <td>{{ expense.date }}</td>
+    <td>{{ expense.description }}</td>
+    <td>{{ expense.amount if expense.transaction_type == "credit" else "-" }}</td>
+    <td>{{ expense.amount if expense.transaction_type == "debit" else "-" }}</td>
+    <td>{{ expense.running_balance }}</td>
+    
+  </tr>
+  {% endfor %}
+
+</table>
+
+</body>
+</html>

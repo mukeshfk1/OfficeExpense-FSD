@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>New Transaction</title>
+</head>
+<body>
+    <form action="/new-transaction" method="POST" class="transactionForm">
+        <h1>New Transaction</h1>
+        <label for="transaction_type">Transacation Type</label>
+        <select id="transaction_type" name="transaction_type" required>
+            <option value="credit">Credit</option>
+            <option value="debit">Debit</option>
+        </select> <br>
+
+        <label for="amount">Amount</label>
+        <input type="text" id="amount" name="amount" required> <br>
+
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" required> <br>
+
+        <input type="submit" value="💾 Save">
+        <input type="button" value="❌ Cancel" onclick="window.location.href='/'">
+
+    </form>
+
+</body>
+</html>
