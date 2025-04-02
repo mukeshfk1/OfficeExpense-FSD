@@ -30,12 +30,6 @@ Ensure you have a `requirements.txt` file with the necessary dependencies. Then,
 pip install -r requirements.txt
 ```
 
-If you don’t have a `requirements.txt` file, you can install Flask manually:
-
-```sh
-pip install flask
-```
-
 ### 3. Run the Application
 Execute the Flask application:
 
